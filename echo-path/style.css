@@ -10,7 +10,7 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body {
+body { overflow-x: hidden;
   margin: 0; color: var(--text);
   background: radial-gradient(1200px 700px at 50% -10%, #0C2234 0%, var(--bg) 60%) fixed, var(--bg);
   font: 17px/1.65 "Manrope", -apple-system, "Segoe UI", sans-serif;
@@ -32,7 +32,7 @@ img { display: block; max-width: 100%; }
 .hero h1 { font: 300 clamp(56px, 10vw, 112px)/0.92 "Space Grotesk", sans-serif; letter-spacing: -0.04em; margin: 18px 0 0; }
 .hero p.lead { font-size: clamp(18px, 2.4vw, 21px); color: var(--dim); max-width: 520px; margin: 24px 0 0; }
 .hero .icon { width: 100%; max-width: 360px; justify-self: center; border-radius: 22%; box-shadow: 0 0 0 1px var(--line-strong), 0 30px 90px rgba(94, 242, 224, 0.18); }
-@media (max-width: 760px) { .hero { grid-template-columns: 1fr; padding-top: 40px; } .hero .icon { max-width: 200px; justify-self: start; order: -1; } }
+@media (max-width: 760px) { .hero { grid-template-columns: minmax(0, 1fr); padding-top: 40px; } .hero .icon { max-width: 200px; justify-self: start; order: -1; } }
 
 .stores { display: flex; flex-wrap: wrap; gap: 12px; margin: 34px 0 0; }
 .store {
@@ -49,7 +49,7 @@ img { display: block; max-width: 100%; }
 .shots img { width: 230px; aspect-ratio: 9 / 16; height: auto; border-radius: 14px; flex: none; scroll-snap-align: center; border: 1px solid var(--line); }
 @media (min-width: 1040px) { .shots { justify-content: center; } .shots img { width: 156px; } }
 
-.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); border-top: 1px solid var(--line); margin: 32px 0 72px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); border-top: 1px solid var(--line); margin: 32px 0 72px; }
 .feature { padding: 28px 24px 28px 0; border-bottom: 1px solid var(--line); }
 .feature h3 { font: 500 22px "Space Grotesk", sans-serif; margin: 10px 0 6px; }
 .feature p { margin: 0; color: var(--dim); font-size: 16px; }
